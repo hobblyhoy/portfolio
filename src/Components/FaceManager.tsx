@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useCursorPosition from './CustomHooks/useCursorPosition';
+import useCursorPosition from '../CustomHooks/useCursorPosition';
 import Face from './Face';
 
 function FaceManager() {

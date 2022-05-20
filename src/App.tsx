@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FaceManager from './FaceManager';
+import FaceManager from './Components/FaceManager';
 
 function App() {
    return (
