@@ -8,9 +8,9 @@ function FaceManager() {
    // TODO when you konami code, switches to a :P face, should only show on desktop
    // TODO needs to twist/skew more, need to have support for that
    // TODO needs to figure out where the center of the face is and make that the baseline
-   useEffect(() => {
-      console.log(cursorPosition);
-   }, [cursorPosition]);
+   // useEffect(() => {
+   //    console.log(cursorPosition);
+   // }, [cursorPosition]);
 
    return (
       <Face
