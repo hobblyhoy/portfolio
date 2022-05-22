@@ -1,3 +1,4 @@
+// TODO change these to some coordinate type object w/ an x/y
 interface IProps {
    leftEyeX: number,
    leftEyeY: number,
