@@ -11,15 +11,12 @@ interface IProps {
 
 function ContentBlock({ title, children }: IProps) {
 
-   // Fade in + slide up effect
-   // Continuously compare the top of the content block and the bottom of the page.
-   // once that threshold is reached, reduce the margin and set opacity to 1 
    const frameRef = useRef<HTMLDivElement>(null);
    const [isVisible, setIsVisible] = useState(false);
-
+   
    useEffect(() => {
+      // Fade in + slide up effect driver
       const onScroll = (event: Event) => {
-         //console.log(event);
          const userScrollDepth = window.innerHeight + window.scrollY;
          const topOfElement = window.pageYOffset + (frameRef.current?.getBoundingClientRect().top || Number.POSITIVE_INFINITY);
          const scrollBuffer = 200; // How far past the top of the element we need to scroll before it becomes visible
@@ -34,21 +31,29 @@ function ContentBlock({ title, children }: IProps) {
       return () => window.removeEventListener('scroll', onScroll);
    }, []);
 
+   // representing the margin pixel heights _after_ the slide in effect
+   const topMargin = 300;
+   const bottomMargin = 100;
+   const slideInLength = 100;
+   const slideInLengthMobile = 50;
 
    const base = css`
       display: flex;
       justify-content: center;
-      opacity: ${isVisible ? 1 : 0};
-      margin-top: ${isVisible ? '300px' : '400px'};
+      // opacity: ${isVisible ? 1 : 0};
+      opacity: 1;
+      margin-top: ${isVisible ? topMargin : topMargin + slideInLength}px;
+      margin-bottom: ${isVisible ? bottomMargin : bottomMargin - slideInLength}px;
       @media (max-width: 768px) {
          margin-top: ${isVisible ? '100px' : '150px'};
+
       }
 
       margin-left: 20px;
       margin-right: 20px;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
 
-      transition-property: margin-top, opacity;
+      transition-property: margin-top, margin-bottom, opacity;
       transition-duration: 1s;
    `;
 
@@ -73,6 +78,8 @@ function ContentBlock({ title, children }: IProps) {
    const contentCss = css`
       padding: 20px;
       background-color: ${backgroundColorBlock};
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
       line-height: 1.5;

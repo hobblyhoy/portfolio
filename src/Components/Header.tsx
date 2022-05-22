@@ -16,7 +16,7 @@ function Header() {
       width: 100%;
       height: 70px;
       background-color: ${backgroundColor};
-      box-shadow: 0 7px 10px 0 rgba(0,0,0,0.25);
+      box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.25);
    `;
 
    return (
@@ -38,23 +38,23 @@ function Navigation() {
 
    return (
       <div css={navCss}>
-         [&nbsp;
+         [&nbsp;&nbsp;
          <a href="#about-me" css={accentLinkHover}>
             About Me
          </a>
-         ,&nbsp;
-         <a href="#about-me" css={accentLinkHover}>
-            Experience
-         </a>
-         ,&nbsp;
+         ,&nbsp;&nbsp;
          <a href="#about-me" css={accentLinkHover}>
             Tech
          </a>
-         ,&nbsp;
+         ,&nbsp;&nbsp;
+         <a href="#about-me" css={accentLinkHover}>
+            Experience
+         </a>
+         ,&nbsp;&nbsp;
          <a href="#about-me" css={accentLinkHover}>
             Projects
          </a>
-         &nbsp;]
+         &nbsp;&nbsp;]
       </div>
    );
 }
