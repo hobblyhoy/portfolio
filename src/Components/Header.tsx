@@ -20,7 +20,7 @@ function Header() {
    `;
 
    return (
-      <div css={base}>
+      <div css={base} id="header">
          <Navigation />
          <ContactMeBox />
       </div>
@@ -36,22 +36,34 @@ function Navigation() {
       color: ${boringColor};
    `;
 
+   const scrollTo = (sectionId: string) => {
+      // Get distance down the page
+      const topOfSection = window.pageYOffset + document.getElementById(sectionId)!.getBoundingClientRect().top;
+      const heightOfHeader = document.getElementById("header")!.offsetHeight;
+
+      // allow for header
+      window.scrollTo({
+         top: topOfSection - heightOfHeader,
+         behavior: 'smooth'
+      });
+   };
+
    return (
       <div css={navCss}>
          [&nbsp;&nbsp;
-         <a href="#about-me" css={accentLinkHover}>
+         <a onClick={() => scrollTo('about-me')} css={accentLinkHover}>
             About Me
          </a>
          ,&nbsp;&nbsp;
-         <a href="#about-me" css={accentLinkHover}>
+         <a onClick={() => scrollTo('tech')} css={accentLinkHover}>
             Tech
          </a>
          ,&nbsp;&nbsp;
-         <a href="#about-me" css={accentLinkHover}>
+         <a onClick={() => scrollTo('experience')} css={accentLinkHover}>
             Experience
          </a>
          ,&nbsp;&nbsp;
-         <a href="#about-me" css={accentLinkHover}>
+         <a onClick={() => scrollTo('projects')} css={accentLinkHover}>
             Projects
          </a>
          &nbsp;&nbsp;]

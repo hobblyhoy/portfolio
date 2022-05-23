@@ -5,7 +5,7 @@ import ContentBlock from './ContentBlock';
 
 function Tech() {
    return (
-      <ContentBlock title="Tech">
+      <ContentBlock title="Tech" id="tech">
          <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum, dolor vel
             suscipit iaculis, lacus neque dictum dui, nec fermentum sapien turpis in dolor. Quisque

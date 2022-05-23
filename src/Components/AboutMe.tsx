@@ -5,7 +5,7 @@ import ContentBlock from './ContentBlock';
 
 function AboutMe() {
    return (
-      <ContentBlock title="About Me">
+      <ContentBlock title="About Me" id="about-me">
          <div>
             <p
                css={css`
