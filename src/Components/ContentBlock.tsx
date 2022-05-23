@@ -16,6 +16,7 @@ function ContentBlock({ title, children }: IProps) {
    
    useEffect(() => {
       // Fade in + slide up effect driver
+      // TODO debounce
       const onScroll = (event: Event) => {
          const userScrollDepth = window.innerHeight + window.scrollY;
          const topOfElement = window.pageYOffset + (frameRef.current?.getBoundingClientRect().top || Number.POSITIVE_INFINITY);
@@ -35,25 +36,24 @@ function ContentBlock({ title, children }: IProps) {
    const topMargin = 300;
    const bottomMargin = 100;
    const slideInLength = 100;
-   const slideInLengthMobile = 50;
+
+   const mobileAdjustmentFactor = 0.5;
 
    const base = css`
       display: flex;
       justify-content: center;
-      // opacity: ${isVisible ? 1 : 0};
-      opacity: 1;
-      margin-top: ${isVisible ? topMargin : topMargin + slideInLength}px;
-      margin-bottom: ${isVisible ? bottomMargin : bottomMargin - slideInLength}px;
+      opacity: ${isVisible ? 1 : 0};
+      padding-top: ${isVisible ? topMargin : topMargin + slideInLength}px;
+      padding-bottom: ${isVisible ? bottomMargin : bottomMargin - slideInLength}px;
       @media (max-width: 768px) {
-         margin-top: ${isVisible ? '100px' : '150px'};
-
+         padding-top: ${(isVisible ? topMargin : topMargin + slideInLength) * mobileAdjustmentFactor}px;
+         padding-bottom: ${(isVisible ? bottomMargin : bottomMargin - slideInLength) * mobileAdjustmentFactor}px;
       }
 
-      margin-left: 20px;
-      margin-right: 20px;
-      //margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
 
-      transition-property: margin-top, margin-bottom, opacity;
+      transition-property: padding-top, padding-bottom, opacity;
       transition-duration: 1s;
    `;
 
