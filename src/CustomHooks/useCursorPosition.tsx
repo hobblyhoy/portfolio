@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import internal from "stream";
 
 function useCursorPosition() {
    const [position, setPosition] = useState({x: 0, y: 0});
@@ -19,3 +20,8 @@ function useCursorPosition() {
 }
 
 export default useCursorPosition;
+
+export interface Position {
+   x: number;
+   y: number;
+}

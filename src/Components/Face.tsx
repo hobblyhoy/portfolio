@@ -2,9 +2,11 @@
 interface IProps {
    backTransform: string;
    neckTransform: string;
+   noseEarsMouthTransform: string;
+   hairEyesTransform: string;
 }
 
-function Face({ backTransform, neckTransform }: IProps) {
+function Face({ backTransform, neckTransform, noseEarsMouthTransform, hairEyesTransform }: IProps) {
    return (
       <svg
          version="1.1"
@@ -400,7 +402,7 @@ function Face({ backTransform, neckTransform }: IProps) {
 		c0,0,212.668-250.002,290.668-412.002c0,0-72.711-75.059-60-138c0,0-16-90,4-140C2425,2353,1526,2346,1477.5,2434.5z"
             />
          </g>
-         <g id="Layer_4">
+         <g id="Layer_4" transform={noseEarsMouthTransform}>
             <path
                fill="#1F1D4E"
                d="M1322.406,1715.563c0,0-8.406,161.938,27.594,213.438c0,0,11.376,21.591,0,42.59
@@ -579,7 +581,7 @@ function Face({ backTransform, neckTransform }: IProps) {
             />
             <path fill="#1F1D4E" d="M1318.5,1558c0,0-13,17.5-35,12" />
          </g>
-         <g id="Layer_5">
+         <g id="Layer_5" transform={hairEyesTransform}>
             <path
                fill="#DFDFE7"
                d="M2062.493,1681c0,0-116.667-68.308-6.667-141.487c0,0,230-114.344,332.667,39.572
