@@ -1,4 +1,3 @@
-// TODO change these to some coordinate type object w/ an x/y
 interface IProps {
    backTransform: string;
    neckTransform: string;
@@ -15,6 +14,7 @@ function Face({ backTransform, neckTransform, noseEarsMouthTransform, hairEyesTr
          viewBox="0 0 4000 4000"
          enableBackground="new 0 0 4000 4000"
          xmlSpace="preserve"
+
       >
          <g id="Layer_2" transform={backTransform}>
             <path

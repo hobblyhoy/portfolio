@@ -30,3 +30,9 @@ export const accentLinkHover = css`
       color: ${accentColor};
    }
 `;
+
+export const linearProgress = (start: number, progressFactor: number): number => {
+   if (progressFactor > 1) throw 'Cannot have progress beyond 100%';
+
+   return Math.floor(start - (start * progressFactor));
+}

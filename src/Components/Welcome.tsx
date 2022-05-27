@@ -18,9 +18,13 @@ function Welcome() {
       margin-right: 20px;
    `;
 
+   //TODO play with this might be able to get some mroe range by limighting the height
    const faceBlockCss = css`
-      width: 300px;
-      height: 240px;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    `;
 
    const welcomeTextCss = css`
