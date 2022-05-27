@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 
 export const backgroundColor = '#1B1B3A';
-export const backgroundColorBlock = '#282855' // +9 brightness
+export const backgroundColorBlock = '#282855'; // +9 brightness
 export const backgroundColorSubtle = '#171732'; // -27 brightness
 
 export const primaryColor = '#BDBDE0';
@@ -31,8 +31,16 @@ export const accentLinkHover = css`
    }
 `;
 
-export const linearProgress = (start: number, progressFactor: number): number => {
+export const easeProgress = (start: number, progressFactor: number): number => {
    if (progressFactor > 1) throw 'Cannot have progress beyond 100%';
 
-   return Math.floor(start - (start * progressFactor));
-}
+   // Keeping these experimental ones around in case I change my mind again
+   // equations are based on a cartesian graph charting time on x and distance traveled on y
+   //return Math.floor(start - (start * progressFactor)); //Linear
+   //return Math.floor(start - (start * Math.cbrt(progressFactor))); //Cubic root
+   //return Math.floor(start - (start * Math.pow(progressFactor, 0.25))); //Quad root
+
+   return Math.floor(start - start * Math.sqrt(1 - Math.pow(progressFactor - 1, 2))); //Circle quadrant 2
+};
+
+export const collapsedHeaderHeight = 70;

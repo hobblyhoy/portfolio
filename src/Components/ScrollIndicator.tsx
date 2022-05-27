@@ -34,11 +34,19 @@ function ScrollIndicator() {
       display: flex;
       flex-direction: column;
       background-color: ${backgroundColorBlock};
-      padding-top: 10px;
-      padding-bottom: 20px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      padding-left: 80px;
+      padding-right: 80px;
       border-radius: 5px;
+      font-size: 32px;
+      @media (max-width: 768px) {
+         padding-top: 10px;
+         padding-bottom: 20px;
+         padding-left: 40px;
+         padding-right: 40px;
+         font-size: 20px;
+      }
    `;
 
    const keyframesHelper = keyframes`
@@ -56,7 +64,7 @@ function ScrollIndicator() {
    // #endregion
 
    return (
-      <div css={base}>
+      <div css={base} aria-hidden="true">
          <div css={indicatorCss}>
             <span>Scroll</span>
             <FontAwesomeIcon icon={faChevronDown} css={chevronCss} />

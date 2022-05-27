@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
-import { backgroundColor, backgroundColorBlock, backgroundColorSubtle } from '../utils';
+import { backgroundColorBlock } from '../utils';
 import { debounce } from 'lodash';
 
 interface IProps {
@@ -34,13 +34,11 @@ function ContentBlock({ title, children, id }: IProps) {
             setIsVisible(true);
             window.removeEventListener('scroll', onScroll);
          }
-      }, 50);
+      }, 50, {maxWait: 50});
 
       window.addEventListener('scroll', onScroll);
       return () => window.removeEventListener('scroll', onScroll);
    }, []);
-
-
 
    const base = css`
       display: flex;

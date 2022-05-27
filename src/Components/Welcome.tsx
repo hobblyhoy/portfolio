@@ -12,10 +12,17 @@ function Welcome() {
       margin-top: 300px;
       margin-left: 20px;
       margin-right: 20px;
+      @media (max-width: 768px) {
+         flex-direction: column-reverse;
+         margin-top: 100px;
+      }
    `;
 
    const welcomeBlockCss = css`
       margin-right: 20px;
+      @media (max-width: 768px) {
+         margin-left: 20px;
+      }
    `;
 
    //TODO play with this might be able to get some mroe range by limighting the height
@@ -25,15 +32,27 @@ function Welcome() {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 768px) {
+         width: 250px;
+         height: 250px;
+      }
    `;
 
    const welcomeTextCss = css`
       font-size: 100px;
+      @media (max-width: 768px) {
+         font-size: 80px;
+      }
    `;
 
    const myNameIsTextCss = css`
       font-size: 36px;
+      margin-bottom: 15px;
+      @media (max-width: 768px) {
+         font-size: 28px;
+      }
    `;
+
    const accentColorCss = css`
       color: ${accentColor};
    `;
