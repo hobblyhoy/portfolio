@@ -37,19 +37,29 @@ export const accentLinkHover = css`
 export const collapsedHeaderHeight = 70; // measured in pixels
 
 // functions
-export const easeProgress = (start: number, progressFactor: number): number => {
-   if (progressFactor > 1) throw 'Cannot have progress beyond 100%';
+
+/**
+ * An easing function to take you from some starting position to 0.
+ * @param start number indicating some kind of positional starting point
+ * @param progressFactor number from 0 => 1 indicating the progress thus far. 
+ * This is probably time but any linear input will work
+ * @returns an int for the appropriate position
+ */
+export const easeToZero = (start: number, progressFactor: number): number => {
+   if (progressFactor < 0 || progressFactor > 1) throw 'smooth / sensical graph only guaranteed from 0 to 1';
 
    // Keeping these experimental ones around in case I change my mind again
-   // equations are based on a cartesian graph charting time on x and distance traveled on y
    //return Math.floor(start - (start * progressFactor)); //Linear
    //return Math.floor(start - (start * Math.cbrt(progressFactor))); //Cubic root
    //return Math.floor(start - (start * Math.pow(progressFactor, 0.25))); //Quad root
-
    return Math.floor(start - start * Math.sqrt(1 - Math.pow(progressFactor - 1, 2))); //Circle quadrant 2
 };
 
-// returns a random integer between 0 and max
+/**
+ * 
+ * @param arr any given array
+ * @returns a random element from the given array
+ */
 export const chooseRandom = (arr: any[]) => {
    const randNum = random(0, arr.length - 1);
    return arr[randNum];

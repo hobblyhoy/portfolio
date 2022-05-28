@@ -49,7 +49,12 @@ function AboutMe() {
                I don't subscribe to all the credo's of software development but there are some
                lessons I keep close to heart:
             </p>
-            <ul className="fa-ul" css={css`margin-left: 20px;`}>
+            <ul
+               className="fa-ul"
+               css={css`
+                  margin-left: 20px;
+               `}
+            >
                <CustomLi>
                   <span>
                      Figure out the hard stuff well before a single line of code has been written.
@@ -99,8 +104,8 @@ function AboutMe() {
                </CustomLi>
                <CustomLi>
                   <span>
-                     Everything I learn and believe (including everything in this list!) is
-                     continuously challenged for accuracy and relevance as I grow.
+                     Everything learned (including everything in this list!) should be challenged
+                     for accuracy and relevance indefinitely.
                   </span>
                </CustomLi>
             </ul>

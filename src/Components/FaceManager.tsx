@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Transformer from '../Classes/Transformer';
 import useCursorPosition, { Position } from '../CustomHooks/useCursorPosition';
-import { easeProgress } from '../utils';
+import { easeToZero } from '../utils';
 import Face from './Face';
 
 // Configurable constants
@@ -17,7 +17,7 @@ function FaceManager() {
    const [cursorPositionOverride, _setCursorPositionOverride] = useState({ x: 0, y: 0 });
    const setCursorPositionOverride = (newPosition: Position) => {
       // There are expensive renders on cursorPositionOverride updates so ensure we're
-      // only ever updating if the objects values actually update
+      // only ever updating if the objects values actually change
       _setCursorPositionOverride(currentPosition => {
          if (currentPosition.x === newPosition.x && currentPosition.y === newPosition.y) {
             return currentPosition; // no update triggered
@@ -90,8 +90,8 @@ function FaceManager() {
             setCursorPositionOverride({ x: 0, y: 0 });
          } else {
             const newPosition: Position = {
-               x: easeProgress(animationStartPositionRef.current!.x, progressFactor),
-               y: easeProgress(animationStartPositionRef.current!.y, progressFactor),
+               x: easeToZero(animationStartPositionRef.current!.x, progressFactor),
+               y: easeToZero(animationStartPositionRef.current!.y, progressFactor),
             };
             setCursorPositionOverride(newPosition);
             rafRef.current = requestAnimationFrame(animate);

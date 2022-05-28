@@ -48,6 +48,8 @@ function Welcome() {
    const myNameIsTextCss = css`
       font-size: 36px;
       margin-bottom: 15px;
+      // display: flex;
+      // align-items: center;
       @media (max-width: 768px) {
          font-size: 28px;
       }
@@ -56,6 +58,7 @@ function Welcome() {
    const accentColorCss = css`
       color: ${accentColor};
    `;
+
 
    return (
       <div css={base}>
