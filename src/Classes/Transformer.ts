@@ -10,22 +10,26 @@ const transformTypeFactors = {
    translate: 1,
 };
 
+type TransformType = 'rotate' | 'scale' | 'skewX' | 'skewY' | 'translate';
+
 class Transformer {
-   #type: 'rotate' | 'scale' | 'skewX' | 'skewY' | 'translate';
-   #axis: 'x' | 'y';
-   #axisValueFactor: number;
-   axisValue: number;
+   #xType: TransformType;
+   #yType: TransformType;
+   #valueFactor: number;
+   xAxisValue: number;
+   yAxisValue: number;
 
    constructor() {
-      this.#type = chooseRandom(Object.keys(transformTypeFactors));
-      this.#axis = chooseRandom(['x', 'y']);
-      this.#axisValueFactor = random(0.75, 1.25);
-      this.axisValue = 0; //updates each cycle
+      this.#xType = chooseRandom(Object.keys(transformTypeFactors));
+      this.#yType = chooseRandom(Object.keys(transformTypeFactors));
+      this.#valueFactor = random(0.75, 1.25);
+      this.xAxisValue = 0; //updates each cycle
+      this.yAxisValue = 0; //updates each cycle
    }
 
-   toString() {
-      const outputVal = this.axisValue * transformTypeFactors[this.#type] * this.#axisValueFactor;
-      switch (this.#type) {
+   #getTransformString(type: TransformType, value: number) {
+      const outputVal = value * transformTypeFactors[type] * this.#valueFactor;
+      switch (type) {
          case 'rotate':
             return `rotate(${outputVal})`;
          case 'scale':
@@ -39,8 +43,12 @@ class Transformer {
       }
    }
 
-   get axis() {
-      return this.#axis;
+   toString() {
+      return (
+         this.#getTransformString(this.#xType, this.xAxisValue) +
+         ' ' +
+         this.#getTransformString(this.#yType, this.yAxisValue)
+      );
    }
 }
 
