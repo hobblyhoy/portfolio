@@ -1,6 +1,4 @@
-import { debounce } from 'lodash';
 import React, { useEffect, useRef, useState } from 'react';
-import { useCallback } from 'react';
 import Transformer from '../Classes/Transformer';
 import useCursorPosition, { Position } from '../CustomHooks/useCursorPosition';
 import { easeProgress } from '../utils';
@@ -118,7 +116,7 @@ function FaceManager() {
 
    return (
       <React.Fragment>
-         {transformProps && transformProps.length > 0 && <Face transformProps={transformProps} />}
+         {transformProps.length > 0 && <Face transformProps={transformProps} />}
       </React.Fragment>
    );
 }
