@@ -37,11 +37,12 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
    const mobileNavCss = css`
       color: ${boringColor};
       opacity: ${mobileNavIsOpen ? 1 : 0};
-      transition: opacity 0.5s;
+      transition: opacity 3s;
       margin-top: 20px;
       margin-left: 80px;
       font-size: 50px;
       line-height: 2;
+      visibility: ${mobileNavIsOpen ? 'unset' : 'hidden'};
    `;
 
    const scrollTo = (sectionId: string) => {
