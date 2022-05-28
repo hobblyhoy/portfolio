@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import internal from 'stream';
+import Transformer from '../Classes/Transformer';
 import useCursorPosition, { Position } from '../CustomHooks/useCursorPosition';
 import { easeProgress } from '../utils';
 import Face from './Face';
@@ -7,10 +8,21 @@ import Face from './Face';
 function FaceManager() {
    // state for cursor position
    const cursorPosition = useCursorPosition();
-   const [cursorPositionOverride, setCursorPositionOverride] = useState({ x: 0, y: 0 });
+   const [cursorPositionOverride, _setCursorPositionOverride] = useState({ x: 0, y: 0 });
+   const setCursorPositionOverride = (newPosition:Position) => {
+      // Little perf boost since we have so much riding on this update now
+      _setCursorPositionOverride(currentPosition => {
+         if (currentPosition.x === newPosition.x && currentPosition.y === newPosition.y) {
+            return currentPosition; // no update triggered
+         } else {
+            return newPosition;
+         }
+      });
+   }
 
    // state for threshold and animation
    const [hasCrossedThreshold, setHasCrossedThreshold] = useState(false);
+   const [transformProps, setTransformProps] = useState<Transformer[]>([]);
    const rafRef = useRef<number>();
    const animationStartTimeRef = useRef<number>();
    const animationStartPositionRef = useRef<Position>();
@@ -74,23 +86,33 @@ function FaceManager() {
 
    // TODO when you konami code, switches to a :P face, should only show on desktop
 
+   // useEffect(() => {
+   //    console.log({x: cursorPositionOverride.x, y: cursorPositionOverride.y});
+   // },[cursorPositionOverride])
+
    useEffect(() => {
-      console.log({cursorPositionOverride});
-   },[cursorPositionOverride])
+      const newTransformProps = [...transformProps];
+      for (var i = 0; i <= 150; i++) {
+         //newTransformProps[i] = `skewX(${cursorPositionOverride.x * 0.1}) skewY(${cursorPositionOverride.y * 0.1})`
+         if (newTransformProps[i] === undefined) {
+            newTransformProps[i] = new Transformer();
+         }
+         // const tempAxisValue = cursorPositionOverride[newTransformProps[i].axis];
+         // console.log(tempAxisValue);
+         // newTransformProps[i].axisValue = tempAxisValue;
+         newTransformProps[i].axisValue = cursorPositionOverride[newTransformProps[i].axis];
+      }
+      setTransformProps(newTransformProps);
+   }, [cursorPositionOverride]);
 
    return (
-      <Face
-         backTransform={`rotate(${cursorPositionOverride.x * 0.05})`}
-         neckTransform={`scale(${cursorPositionOverride.x * 0.001 + 1}, ${
-            cursorPositionOverride.y * 0.002 + 1
-         })`}
-         noseEarsMouthTransform={`skewX(${cursorPositionOverride.x * 0.1}) skewY(${
-            cursorPositionOverride.y * 0.1
-         })`}
-         hairEyesTransform={`translate(${cursorPositionOverride.y * 1}, ${
-            cursorPositionOverride.x * 1
-         })`}
-      />
+      <React.Fragment>
+         {transformProps.length > 0 && (
+            <Face
+               transformProps={transformProps}
+            />
+         )}
+      </React.Fragment>
    );
 }
 

@@ -1,7 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
+import { random } from 'lodash';
 
+// css
 export const backgroundColor = '#1B1B3A';
 export const backgroundColorBlock = '#282855'; // +9 brightness
 export const backgroundColorSubtle = '#171732'; // -27 brightness
@@ -31,6 +33,10 @@ export const accentLinkHover = css`
    }
 `;
 
+// standards
+export const collapsedHeaderHeight = 70; // measured in pixels
+
+// functions
 export const easeProgress = (start: number, progressFactor: number): number => {
    if (progressFactor > 1) throw 'Cannot have progress beyond 100%';
 
@@ -43,4 +49,8 @@ export const easeProgress = (start: number, progressFactor: number): number => {
    return Math.floor(start - start * Math.sqrt(1 - Math.pow(progressFactor - 1, 2))); //Circle quadrant 2
 };
 
-export const collapsedHeaderHeight = 70;
+// returns a random integer between 0 and max
+export const chooseRandom = (arr: any[]) => {
+   const randNum = random(0, arr.length - 1);
+   return arr[randNum];
+};
