@@ -22,6 +22,7 @@ function Welcome() {
       margin-right: 20px;
       @media (max-width: 768px) {
          margin-left: 20px;
+         text-align: center;
       }
    `;
 

@@ -1,5 +1,6 @@
 import './App.css';
 import AboutMe from './Components/AboutMe';
+import Experience from './Components/Experience';
 import Header from './Components/Header';
 import ScrollIndicator from './Components/ScrollIndicator';
 import Tech from './Components/Tech';
@@ -13,6 +14,7 @@ function App() {
          <Welcome />
          <AboutMe />
          <Tech />
+         <Experience />
 
          <ScrollIndicator />
       </div>

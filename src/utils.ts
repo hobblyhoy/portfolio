@@ -15,6 +15,7 @@ export const accentColor = '#DB3E00';
 export const accentColorHover = '#D6B0D6';
 
 export const boringColor = '#4e4e4e';
+export const boringColorBright = '#959595';
 
 export const primaryLinkHover = css`
    cursor: pointer;

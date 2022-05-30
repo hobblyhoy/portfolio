@@ -19,22 +19,27 @@ const slideInLength = 100; // How far up will the component slide
 const mobileAdjustmentFactor = 0.5; // factor applied to adjust all these distances for mobile
 
 function ContentBlock({ title, children, id }: IProps) {
-
    const frameRef = useRef<HTMLDivElement>(null);
    const [isVisible, setIsVisible] = useState(false);
-   
+
    useEffect(() => {
       // Fade in + slide up effect driver
-      const onScroll = debounce((event: Event) => {
-         const userScrollDepth = window.innerHeight + window.scrollY;
-         const topOfElement = window.pageYOffset + (frameRef.current?.getBoundingClientRect().top || Number.POSITIVE_INFINITY);
-         
-         if (userScrollDepth >= topOfElement + scrollBuffer) {
-            console.log('reached the element!');
-            setIsVisible(true);
-            window.removeEventListener('scroll', onScroll);
-         }
-      }, 50, {maxWait: 50});
+      const onScroll = debounce(
+         (event: Event) => {
+            const userScrollDepth = window.innerHeight + window.scrollY;
+            const topOfElement =
+               window.pageYOffset +
+               (frameRef.current?.getBoundingClientRect().top || Number.POSITIVE_INFINITY);
+
+            if (userScrollDepth >= topOfElement + scrollBuffer) {
+               console.log('reached the element!');
+               setIsVisible(true);
+               window.removeEventListener('scroll', onScroll);
+            }
+         },
+         50,
+         { maxWait: 50 }
+      );
 
       window.addEventListener('scroll', onScroll);
       return () => window.removeEventListener('scroll', onScroll);
@@ -47,8 +52,10 @@ function ContentBlock({ title, children, id }: IProps) {
       padding-top: ${isVisible ? topPadding : topPadding + slideInLength}px;
       padding-bottom: ${isVisible ? bottomPadding : bottomPadding - slideInLength}px;
       @media (max-width: 768px) {
-         padding-top: ${(isVisible ? topPadding : topPadding + slideInLength) * mobileAdjustmentFactor}px;
-         padding-bottom: ${(isVisible ? bottomPadding : bottomPadding - slideInLength) * mobileAdjustmentFactor}px;
+         padding-top: ${(isVisible ? topPadding : topPadding + slideInLength) *
+         mobileAdjustmentFactor}px;
+         padding-bottom: ${(isVisible ? bottomPadding : bottomPadding - slideInLength) *
+         mobileAdjustmentFactor}px;
       }
 
       padding-left: 20px;
@@ -59,7 +66,7 @@ function ContentBlock({ title, children, id }: IProps) {
    `;
 
    const frame = css`
-      max-width: 800px;
+      width: 800px;
    `;
 
    const titleCss = css`
@@ -88,8 +95,8 @@ function ContentBlock({ title, children, id }: IProps) {
 
    return (
       <div css={base}>
-         <div css={frame} ref={frameRef}>
-            <div css={titleCss} id={id}>{title}</div>
+         <div css={frame} ref={frameRef} id={id}>
+            <div css={titleCss}>{title}</div>
             <div css={contentCss}>{children}</div>
          </div>
       </div>
