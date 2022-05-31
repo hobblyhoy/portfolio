@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { accentColor } from '../utils';
+import { accentColor } from '../store';
 import ContentBlock from './ContentBlock';
 
 function AboutMe() {

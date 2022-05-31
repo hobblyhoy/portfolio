@@ -4,7 +4,7 @@ import { jsx, css, keyframes } from '@emotion/react';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import { backgroundColorBlock } from '../utils';
+import { backgroundColorBlock } from '../store';
 
 function ScrollIndicator() {
    const [isVisible, setIsVisible] = useState(true);

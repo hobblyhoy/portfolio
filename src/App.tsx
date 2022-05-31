@@ -16,7 +16,7 @@ function App() {
          <Tech />
          <Experience />
 
-         <ScrollIndicator />
+         {/* <ScrollIndicator /> */}
       </div>
    );
 }

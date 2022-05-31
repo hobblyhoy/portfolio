@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useState } from 'react';
-import { backgroundColor, collapsedHeaderHeight } from '../utils';
+import { backgroundColor, collapsedHeaderHeight } from '../store';
 import ContactMeBox from './ContactMe';
 import Navigation from './Navigation';
 

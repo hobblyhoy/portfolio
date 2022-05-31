@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { accentColor, boringColor, boringColorBright } from '../utils';
+import { accentColor, boringColorBright } from '../store';
 import ContentBlock from './ContentBlock';
 
 function Tech() {
