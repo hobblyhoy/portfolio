@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 
 import { useRef, useState, useEffect, useMemo } from 'react';
-import useCursorPosition, { Position } from '../CustomHooks/useCursorPosition';
+import useCursorPosition, { Position } from '../../CustomHooks/useCursorPosition';
 
 interface IProps {
    sizeX: number;

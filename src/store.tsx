@@ -3,7 +3,8 @@
 import { jsx, css } from '@emotion/react';
 import { faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import CustomLi from './Components/SharedComponents/CustomLi';
+import CustomUl from './Components/SharedComponents/CustomUl';
 
 // css
 export const backgroundColor = '#1B1B3A';
@@ -55,8 +56,22 @@ export const workDetailsList: IWorkDetails[] = [
       companyFullName: 'iTAN Franchising',
       title: 'Business Intelligence and IT Administrator',
       startYear: 2012,
-      endYear: 2016, 
-      description: <div>Hi</div>,
+      endYear: 2016,
+      description: (
+         <CustomUl>
+            <CustomLi>
+               Managed corporate and in-store networking, POSs, and IT infrastructure.
+            </CustomLi>
+            <CustomLi>
+               Advised on business trends and opportunities using custom SQL/SSRS Reporting.
+            </CustomLi>
+            <CustomLi>
+               Built and deployed a fully automated in-store music and digital signage system using
+               Python and Bash to keep marketing deployments and content control simple and
+               up-to-date.
+            </CustomLi>
+         </CustomUl>
+      ),
    },
    {
       companyLabel: 'MREN',
@@ -64,7 +79,30 @@ export const workDetailsList: IWorkDetails[] = [
       title: 'Software Developer',
       startYear: 2016,
       endYear: 2018,
-      description: <div>Hi</div>,
+      description: (
+         <CustomUl>
+            <CustomLi>
+               Utilized HTML, JavaScript, and CSS alongside jQuery, Bootstrap, and Knockout
+               libraries and frameworks for frontend SPA development.
+            </CustomLi>
+            <CustomLi>Used C# and ASP.NET framework for backend development.</CustomLi>
+            <CustomLi>
+               Implemented a site-wide IndexedDB based caching solution to greatly decrease initial
+               load time for customers.
+            </CustomLi>
+            <CustomLi>
+               Developed an integration testing application using image histogram differences
+               integrated with BrowserStack and Selenium API.
+            </CustomLi>
+            <CustomLi>
+               Built utilities for system statistics for staff with automated emailed reports.
+            </CustomLi>
+            <CustomLi>
+               Created a site-wide activity monitoring system, greatly improving customer support
+               capabilities.
+            </CustomLi>
+         </CustomUl>
+      ),
    },
    {
       companyLabel: <FontAwesomeIcon icon={faPlaneDeparture} />,
@@ -72,7 +110,15 @@ export const workDetailsList: IWorkDetails[] = [
       title: 'Freelancer / Transient',
       startYear: 2018,
       endYear: 2019,
-      description: <div>Hi</div>,
+      description: (
+         <CustomUl>
+            <CustomLi>
+               Learned and built projects with modern frontend frameworks Angular, React, and Vue.
+            </CustomLi>
+            <CustomLi>Various freelance / side jobs earning literally 10's of dollars.</CustomLi>
+            <CustomLi>Assisted in duck handling at a remote duck sanctuary (not a joke).</CustomLi>
+         </CustomUl>
+      ),
    },
    {
       companyLabel: 'iGrad',
@@ -80,6 +126,26 @@ export const workDetailsList: IWorkDetails[] = [
       title: 'Software Engineer',
       startYear: 2019,
       endYear: null,
-      description: <div>TODO left off here- need to get the custom UL logic in here. Also Experience has gotten too big, need to extract out the grid and description into their own files</div>,
+      description: (
+         <CustomUl>
+            <CustomLi>
+               Frontend development using the latest frameworks and best practices for HTML,
+               JavaScript, and CSS. Backend development using C# on the .NET and .NET Core
+               frameworks.
+            </CustomLi>
+            <CustomLi>
+               Support and advise through the company’s transition from AngularJS to React frontend.
+            </CustomLi>
+            <CustomLi>
+               Migrated development team from VFS to git. Supported the team through policies and
+               documentation as well as becoming the main point of contact for git issues and
+               decisions.
+            </CustomLi>
+            <CustomLi>
+               Researched and implemented a Database Projects instance and integrated automatic
+               database deployments into Azure DevOps pipeline.
+            </CustomLi>
+         </CustomUl>
+      ),
    },
 ];

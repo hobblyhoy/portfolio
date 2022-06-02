@@ -1,10 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { accentColor } from '../store';
 import ContentBlock from './ContentBlock';
+import CustomLi from './SharedComponents/CustomLi';
+import CustomUl from './SharedComponents/CustomUl';
 
 function AboutMe() {
    const begin = css`
@@ -13,27 +12,6 @@ function AboutMe() {
    const end = css`
       margin-bottom: 0;
    `;
-
-   const CustomLi = ({ children }: { children: JSX.Element }) => {
-      const liCss = css`
-         display: flex;
-         line-height: 1.3;
-         margin-bottom: 10px;
-      `;
-      const iconCss = css`
-         margin-top: 5px;
-         margin-right: 10px;
-         color: ${accentColor};
-         font-size: 15px;
-      `;
-
-      return (
-         <li css={liCss}>
-            <FontAwesomeIcon icon={faAngleRight} css={iconCss} />
-            {children}
-         </li>
-      );
-   };
 
    return (
       <ContentBlock title="About Me" id="about-me">
@@ -49,66 +27,40 @@ function AboutMe() {
                I don't subscribe to all the credo's of software development but there are some
                lessons I keep close to heart:
             </p>
-            <ul
-               className="fa-ul"
-               css={css`
-                  margin-left: 20px;
-               `}
-            >
+            <CustomUl>
                <CustomLi>
-                  <span>
-                     Figure out the hard stuff well before a single line of code has been written.
-                  </span>
+                  Figure out the hard stuff well before a single line of code has been written.
                </CustomLi>
                <CustomLi>
-                  <span>
-                     You dont have to understand how NAND gates work but the lower down the tech
-                     stack you understand the better.
-                  </span>
+                  You dont have to understand how NAND gates work but the lower down the tech stack
+                  you understand the better.
                </CustomLi>
                <CustomLi>
-                  <span>
-                     Software is a team sport. Focus should be on rising the tide for everyone, not
-                     pinpointing and leaning into your star players.
-                  </span>
+                  Software is a team sport. Focus should be on rising the tide for everyone, not
+                  pinpointing and leaning into your star players.
                </CustomLi>
                <CustomLi>
-                  <span>
-                     Micro-optimizations are almost always a fools errand that miss the bigger
-                     picture.
-                  </span>
+                  Micro-optimizations are almost always a fools errand that miss the bigger picture.
                </CustomLi>
                <CustomLi>
-                  <span>
-                     All process implementations should be about offloading cognitive load. When
-                     done right- it enables freedom, not control.
-                  </span>
+                  All process implementations should be about offloading cognitive load. When done
+                  right- it enables freedom, not control.
+               </CustomLi>
+               <CustomLi>Test it. Then automate the test. Then test the tests.</CustomLi>
+               <CustomLi>YAGNI</CustomLi>
+               <CustomLi>
+                  Estimates are almost always wrong. Projections based on past performance are
+                  infinitely better.
                </CustomLi>
                <CustomLi>
-                  <span>Test it. Then automate the test. Then test the tests.</span>
+                  Code reviews can be a ridiculously useful tool for learning. Smiting those
+                  opportunities does a disservice to everyone.
                </CustomLi>
                <CustomLi>
-                  <span>YAGNI</span>
+                  Everything learned (including everything in this list!) should be challenged for
+                  accuracy and relevance indefinitely.
                </CustomLi>
-               <CustomLi>
-                  <span>
-                     Estimates are almost always wrong. Projections based on past performance are
-                     infinitely better.
-                  </span>
-               </CustomLi>
-               <CustomLi>
-                  <span>
-                     Code reviews can be a ridiculously useful tool for learning. Smiting those
-                     opportunities does a disservice to everyone.
-                  </span>
-               </CustomLi>
-               <CustomLi>
-                  <span>
-                     Everything learned (including everything in this list!) should be challenged
-                     for accuracy and relevance indefinitely.
-                  </span>
-               </CustomLi>
-            </ul>
+            </CustomUl>
             <p css={end}>
                That only scratches the surface but I love chatting about this stuff so let's talk!
             </p>

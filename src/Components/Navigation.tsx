@@ -20,11 +20,6 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
       align-items: center;
    `;
 
-   // const mobileNavCss = css`
-   //    display: flex;
-   //    align-items: center;
-   // `;
-
    const mobileBurgerMenuCss = css`
       margin-top: 15px;
       margin-left: 10px;
