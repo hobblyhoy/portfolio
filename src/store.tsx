@@ -115,8 +115,11 @@ export const workDetailsList: IWorkDetails[] = [
             <CustomLi>
                Learned and built projects with modern frontend frameworks Angular, React, and Vue.
             </CustomLi>
+            <CustomLi>
+               Learned Canvas and FabricJS.
+            </CustomLi>
             <CustomLi>Various freelance / side jobs earning literally 10's of dollars.</CustomLi>
-            <CustomLi>Assisted in duck handling at a remote duck sanctuary (not a joke).</CustomLi>
+            <CustomLi>Assisted in duck handling at a remote duck sanctuary (no, really).</CustomLi>
          </CustomUl>
       ),
    },

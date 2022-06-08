@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
-import { backgroundColorBlock } from '../store';
+import { backgroundColorBlock } from '../../store';
 import { debounce } from 'lodash';
 
 interface IProps {

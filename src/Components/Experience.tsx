@@ -1,5 +1,5 @@
 import { IWorkDetails, workDetailsList } from '../store';
-import ContentBlock from './ContentBlock';
+import ContentBlock from './SharedComponents/ContentBlock';
 import { SetStateAction, useState } from 'react';
 import ExperienceTimeline from './ExperienceTimeline';
 import ExperienceDescription from './ExperienceDescription';

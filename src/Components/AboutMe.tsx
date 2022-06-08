@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import ContentBlock from './ContentBlock';
+import ContentBlock from './SharedComponents/ContentBlock';
 import CustomLi from './SharedComponents/CustomLi';
 import CustomUl from './SharedComponents/CustomUl';
 

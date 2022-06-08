@@ -1,7 +1,6 @@
 import { random } from 'lodash';
 import { chooseRandom } from '../utils';
 
-// [multiplierAdjustment, additiveAdjustment]
 const transformTypeFactors = {
    rotate: 0.05,
    scale: 0.001,
