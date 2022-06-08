@@ -1,20 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { accentColor, backgroundColor, backgroundColorBlock, IWorkDetails, workDetailsList } from '../store';
+import {
+   accentColor,
+   backgroundColor,
+   backgroundColorBlock,
+   IWorkDetails,
+   workDetailsList,
+} from '../store';
 import { range } from 'lodash';
 import { differenceInDays } from 'date-fns';
-
 
 const currentDate = new Date();
 // a little helper array since we'll need to iterate over this set a few times
 const yearBlocks = range(2012, currentDate.getFullYear() + 1);
 
 interface IProps {
-   selectedWorkDetails: IWorkDetails,
-   clickHandler: Function
+   selectedWorkDetails: IWorkDetails;
+   clickHandler: Function;
 }
-function ExperienceTimeline({selectedWorkDetails, clickHandler}: IProps) {
+function ExperienceTimeline({ selectedWorkDetails, clickHandler }: IProps) {
    const base = css`
       display: grid;
       grid-template-columns: ${yearBlocks.map(x => ` [year${x}] auto`).join('')};
@@ -68,6 +73,7 @@ function ExperienceTimeline({selectedWorkDetails, clickHandler}: IProps) {
             <div
                css={gridWorkDetailsCss(workDetails)}
                onClick={() => clickHandler(workDetails)}
+               key={workDetails.companyFullName}
             >
                <div css={workDetailsCss(workDetails)}>{workDetails.companyLabel}</div>
             </div>
