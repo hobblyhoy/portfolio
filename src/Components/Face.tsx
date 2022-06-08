@@ -1,17 +1,21 @@
 import Transformer from '../Classes/Transformer';
+import useMediaQuery from '../CustomHooks/useMediaQuery';
+
 
 interface IProps {
    transformProps: Transformer[];
 }
 
 function Face({ transformProps }: IProps) {
+	const isMobile = useMediaQuery('(max-width: 768px)');
+	
    return (
       <svg
          version="1.1"
          xmlns="http://www.w3.org/2000/svg"
          xmlnsXlink="http://www.w3.org/1999/xlink"
-         viewBox="0 0 4000 4000"
-         enableBackground="new 0 0 4000 4000"
+         viewBox={isMobile ? "0 0 4000 4000" : "-2000 -2000 8000 8000"}
+         enableBackground={isMobile ? "new 0 0 4000 4000" : "new -2000 -2000 8000 8000"}
          xmlSpace="preserve"
       >
          <g id="Layer_2">

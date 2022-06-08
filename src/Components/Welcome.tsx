@@ -9,7 +9,7 @@ function Welcome() {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 300px;
+      margin-top: 100px;
       margin-left: 20px;
       margin-right: 20px;
       @media (max-width: 768px) {
@@ -28,14 +28,16 @@ function Welcome() {
 
    //TODO play with this might be able to get some mroe range by limighting the height
    const faceBlockCss = css`
-      width: 400px;
-      height: 400px;
+      margin-left: -200px;
+      width: 800px;
+      height: 800px;
       display: flex;
       justify-content: center;
       align-items: center;
       @media (max-width: 768px) {
          width: 250px;
          height: 250px;
+         margin-left: 0;
       }
    `;
 
