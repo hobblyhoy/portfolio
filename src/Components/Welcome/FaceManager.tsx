@@ -78,7 +78,7 @@ function FaceManager() {
    }, [hasCrossedThreshold]);
 
    const animate = (time: number) => {
-      if (animationStartTimeRef.current == undefined) {
+      if (animationStartTimeRef.current === undefined) {
          animationStartTimeRef.current = time;
          animationStartPositionRef.current = cursorPositionOverride;
          rafRef.current = requestAnimationFrame(animate);
