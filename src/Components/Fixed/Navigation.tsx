@@ -3,8 +3,8 @@
 import { jsx, css } from '@emotion/react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useMediaQuery from '../CustomHooks/useMediaQuery';
-import { accentColor, accentLinkHover, boringColor, collapsedHeaderHeight } from '../store';
+import useMediaQuery from '../../CustomHooks/useMediaQuery';
+import { accentColor, accentLinkHover, boringColor, collapsedHeaderHeight } from '../../store';
 
 interface IProps {
    mobileNavIsOpen: boolean;

@@ -7,7 +7,7 @@ import {
    backgroundColorBlock,
    IWorkDetails,
    workDetailsList,
-} from '../store';
+} from '../../store';
 import { range } from 'lodash';
 import { differenceInDays } from 'date-fns';
 

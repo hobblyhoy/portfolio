@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { accentColor, boringColorBright } from '../store';
-import ContentBlock from './SharedComponents/ContentBlock';
+import { accentColor, boringColorBright } from '../../store';
+import ContentBlock from '../SharedComponents/ContentBlock';
 
 function Tech() {
    const commandLineCss = css`

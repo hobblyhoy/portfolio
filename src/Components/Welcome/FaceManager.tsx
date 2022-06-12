@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Transformer from '../Classes/Transformer';
-import useCursorPosition, { Position } from '../CustomHooks/useCursorPosition';
-import { easeToZero } from '../utils';
+import Transformer from '../../Classes/Transformer';
+import useCursorPosition, { Position } from '../../CustomHooks/useCursorPosition';
+import { easeToZero } from '../../utils';
 import Face from './Face';
 
 // Configurable constants

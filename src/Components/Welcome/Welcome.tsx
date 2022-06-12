@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { accentColor } from '../store';
+import { accentColor } from '../../store';
 import FaceManager from './FaceManager';
 
 function Welcome() {

@@ -82,7 +82,11 @@ function ContentBlock({ title, children, id }: IProps) {
    return (
       <div css={base}>
          <div css={frame} id={id}>
-            <SlideBox isVisible={isVisible} slideInLength={slideInLength} slideInLengthMobile={slideInLength / 2}>
+            <SlideBox
+               isVisible={isVisible}
+               slideInLength={slideInLength}
+               slideInLengthMobile={slideInLength / 2}
+            >
                <div css={titleCss} ref={frameRef}>
                   {title}
                </div>

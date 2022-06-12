@@ -1,10 +1,11 @@
 import './App.css';
-import AboutMe from './Components/AboutMe';
-import Experience from './Components/Experience';
-import Header from './Components/Header';
-import ScrollIndicator from './Components/ScrollIndicator';
-import Tech from './Components/Tech';
-import Welcome from './Components/Welcome';
+import AboutMe from './Components/AboutMe/AboutMe';
+import Experience from './Components/Experience/Experience';
+import Header from './Components/Fixed/Header';
+import Projects from './Components/Projects/Projects';
+import ScrollIndicator from './Components/Fixed/ScrollIndicator';
+import Tech from './Components/Tech/Tech';
+import Welcome from './Components/Welcome/Welcome';
 
 function App() {
    return (
@@ -15,8 +16,9 @@ function App() {
          <AboutMe />
          <Tech />
          <Experience />
+         <Projects />
 
-         {/* <ScrollIndicator /> */}
+         <ScrollIndicator />
       </div>
    );
 }

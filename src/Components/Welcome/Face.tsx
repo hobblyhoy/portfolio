@@ -1,5 +1,5 @@
-import Transformer from '../Classes/Transformer';
-import useMediaQuery from '../CustomHooks/useMediaQuery';
+import Transformer from '../../Classes/Transformer';
+import useMediaQuery from '../../CustomHooks/useMediaQuery';
 
 
 interface IProps {

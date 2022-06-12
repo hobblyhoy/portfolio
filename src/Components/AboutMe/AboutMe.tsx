@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import ContentBlock from './SharedComponents/ContentBlock';
-import CustomLi from './SharedComponents/CustomLi';
-import CustomUl from './SharedComponents/CustomUl';
+import ContentBlock from '../SharedComponents/ContentBlock';
+import CustomLi from '../SharedComponents/CustomLi';
+import CustomUl from '../SharedComponents/CustomUl';
 
 function AboutMe() {
    const begin = css`

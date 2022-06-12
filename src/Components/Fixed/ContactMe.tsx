@@ -5,7 +5,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { primaryLinkHover } from '../store';
+import { primaryLinkHover } from '../../store';
 
 function ContactMeBox() {
    const [isHovered, setIsHovered] = useState(false);

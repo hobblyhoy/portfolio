@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomLi from './Components/SharedComponents/CustomLi';
 import CustomUl from './Components/SharedComponents/CustomUl';
@@ -105,7 +105,7 @@ export const workDetailsList: IWorkDetails[] = [
       ),
    },
    {
-      companyLabel: <FontAwesomeIcon icon={faPlaneDeparture} />,
+      companyLabel: <FontAwesomeIcon icon={faPlane} />,
       companyFullName: 'Sabbatical',
       title: 'Freelancer / Transient',
       startYear: 2018,
