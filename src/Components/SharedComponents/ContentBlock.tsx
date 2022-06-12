@@ -4,6 +4,7 @@ import { jsx, css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 import { backgroundColorBlock } from '../../store';
 import { debounce } from 'lodash';
+import SlideBox from './SlideBox';
 
 interface IProps {
    title: string;
@@ -13,10 +14,7 @@ interface IProps {
 
 // Configurable constants
 const scrollBuffer = 100; // How far past the top of the element we need to scroll before it becomes visible
-const topPadding = 200; // representing the padding state _after_ the slide in effect
-const bottomPadding = 100; // representing the padding state _after_ the slide in effect
-const slideInLength = 100; // How far up will the component slide
-const mobileAdjustmentFactor = 0.5; // factor applied to adjust all these distances for mobile
+const slideInLength = 200; // How far up will the component slide
 
 function ContentBlock({ title, children, id }: IProps) {
    const frameRef = useRef<HTMLDivElement>(null);
@@ -48,21 +46,9 @@ function ContentBlock({ title, children, id }: IProps) {
    const base = css`
       display: flex;
       justify-content: center;
-      opacity: ${isVisible ? 1 : 0};
-      padding-top: ${isVisible ? topPadding : topPadding + slideInLength}px;
-      padding-bottom: ${isVisible ? bottomPadding : bottomPadding - slideInLength}px;
-      @media (max-width: 768px) {
-         padding-top: ${(isVisible ? topPadding : topPadding + slideInLength) *
-         mobileAdjustmentFactor}px;
-         padding-bottom: ${(isVisible ? bottomPadding : bottomPadding - slideInLength) *
-         mobileAdjustmentFactor}px;
-      }
 
       padding-left: 20px;
       padding-right: 20px;
-
-      transition-property: padding-top, padding-bottom, opacity;
-      transition-duration: 1s;
    `;
 
    const frame = css`
@@ -95,9 +81,13 @@ function ContentBlock({ title, children, id }: IProps) {
 
    return (
       <div css={base}>
-         <div css={frame} ref={frameRef} id={id}>
-            <div css={titleCss}>{title}</div>
-            <div css={contentCss}>{children}</div>
+         <div css={frame} id={id}>
+            <SlideBox isVisible={isVisible} slideInLength={slideInLength} slideInLengthMobile={slideInLength / 2}>
+               <div css={titleCss} ref={frameRef}>
+                  {title}
+               </div>
+               <div css={contentCss}>{children}</div>
+            </SlideBox>
          </div>
       </div>
    );
