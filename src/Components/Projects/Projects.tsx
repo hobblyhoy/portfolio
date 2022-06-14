@@ -1,11 +1,15 @@
+import { IProjectContainer, projectList } from '../../store';
 import ContentBlock from '../SharedComponents/ContentBlock';
 import ProjectContainer from './ProjectContainer';
-import LmoImage from '../../Assets/lmo2.png';
 
 function Projects() {
    return (
       <ContentBlock title="Projects" id="projects">
-         <ProjectContainer imageUrl={LmoImage} title="Let's Meet On" copy="Hello!" />
+         {projectList.map((project: IProjectContainer, index: number) => (
+            <div key={index}>
+               <ProjectContainer {...project} />
+            </div>
+         ))}
       </ContentBlock>
    );
 }

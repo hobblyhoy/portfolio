@@ -8,7 +8,7 @@ import SlideBox from './SlideBox';
 
 interface IProps {
    title: string;
-   children: JSX.Element;
+   children: JSX.Element | JSX.Element[];
    id: string;
 }
 

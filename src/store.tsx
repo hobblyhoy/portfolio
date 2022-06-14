@@ -5,6 +5,7 @@ import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomLi from './Components/SharedComponents/CustomLi';
 import CustomUl from './Components/SharedComponents/CustomUl';
+import LmoImage from './Assets/lmo2.png';
 
 // css
 export const backgroundColor = '#1B1B3A';
@@ -115,9 +116,7 @@ export const workDetailsList: IWorkDetails[] = [
             <CustomLi>
                Learned and built projects with modern frontend frameworks Angular, React, and Vue.
             </CustomLi>
-            <CustomLi>
-               Learned Canvas and FabricJS.
-            </CustomLi>
+            <CustomLi>Learned Canvas and FabricJS.</CustomLi>
             <CustomLi>Various freelance / side jobs earning literally 10's of dollars.</CustomLi>
             <CustomLi>Assisted in duck handling at a remote duck sanctuary (no, really).</CustomLi>
          </CustomUl>
@@ -150,5 +149,22 @@ export const workDetailsList: IWorkDetails[] = [
             </CustomLi>
          </CustomUl>
       ),
+   },
+];
+
+export interface IProjectContainer {
+   imageUrl: string;
+   websiteUrl?: string;
+   sourceUrl?: string;
+   title: string;
+   copy: string;
+}
+
+export const projectList: IProjectContainer[] = [
+   {
+      imageUrl: LmoImage,
+      websiteUrl: 'https://letsmeeton.com/',
+      title: "Let's Meet On",
+      copy: 'A web app to take a group of people’s schedules and display the times when everyone is available. Designed mobile responsive using Bootstrap with Vue.js for the frontend and ASP.NET with Entity Framework on the backend. Additionally, uses SignalR for chat, SendGrid for email API, and Moment.js.',
    },
 ];
