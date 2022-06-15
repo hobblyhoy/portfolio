@@ -12,12 +12,13 @@ interface IProps {
    isVisible: boolean;
    slideInLength: number;
    slideInLengthMobile: number;
+   duration?: number;
 }
 
-function SlideBox({ children, isVisible, slideInLength, slideInLengthMobile }: IProps) {
+function SlideBox({ children, isVisible, slideInLength, slideInLengthMobile, duration = 1 }: IProps) {
    const base = css`
       transition-property: padding-top, padding-bottom, opacity;
-      transition-duration: 1s;
+      transition-duration: ${duration}s;
 
       padding-top: ${isVisible ? 0 : slideInLength}px;
       padding-bottom: ${isVisible ? slideInLength : 0}px;

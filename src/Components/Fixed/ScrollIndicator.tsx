@@ -7,11 +7,14 @@ import { useEffect, useState } from 'react';
 import { backgroundColorBlock } from '../../store';
 
 function ScrollIndicator() {
-   const [isVisible, setIsVisible] = useState(true);
+   const [opacity, setOpacity] = useState(1);
+   const [isRendered, setIsRendered] = useState(true);
+   const animationDuration = 1; // in seconds
 
+   // Trigger the fade out and removal of event listeners
    useEffect(() => {
       const onScroll = (event: Event) => {
-         setIsVisible(false);
+         setOpacity(0);
          window.removeEventListener('scroll', onScroll);
       };
 
@@ -19,15 +22,24 @@ function ScrollIndicator() {
       return () => window.removeEventListener('scroll', onScroll);
    });
 
+   // Trigger the removal from the page so we dont block interactable elements
+   useEffect(() => {
+      if (!opacity) {
+         setTimeout(() => {
+            setIsRendered(false);
+         }, animationDuration * 1000);
+      }
+   }, [opacity]);
+
    // #region css
    const base = css`
       position: fixed;
       bottom: 50px;
       width: 100%;
-      display: flex;
+      display: ${isRendered ? 'flex' : 'none'};
       justify-content: center;
-      opacity: ${isVisible ? 1 : 0};
-      transition: opacity 1s;
+      opacity: ${opacity};
+      transition: opacity ${animationDuration}s;
    `;
 
    const indicatorCss = css`

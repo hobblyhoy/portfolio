@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { accentColor, backgroundColor, primaryLinkHover } from '../../store';
+import { accentColor, backgroundColor } from '../../store';
+import TooltipLink from '../SharedComponents/TooltipLink';
 
 export interface IProjectContainer {
    imageUrl: string;
@@ -36,7 +37,6 @@ function ProjectContainer({ imageUrl, websiteUrl, sourceUrl, title, copy }: IPro
 
    const titleCss = css`
       margin-top: 5px;
-      //font-weight: bold;
       color: ${accentColor};
    `;
 
@@ -54,13 +54,22 @@ function ProjectContainer({ imageUrl, websiteUrl, sourceUrl, title, copy }: IPro
    return (
       <div css={base}>
          <img css={imageCss} src={imageUrl} />
-
          <div css={contentCss}>
             <div css={titleCss}>{title}</div>
             <div css={copyCss}>{copy}</div>
             <div css={websiteSourceCss}>
-               <span css={primaryLinkHover}>Website</span>
-               <span css={primaryLinkHover}>Source</span>
+               <TooltipLink
+                  text="Website"
+                  url={websiteUrl}
+                  tooltipText={websiteUrl ? '' : 'Contact me!'}
+                  isDisabled={!websiteUrl}
+               />
+               <TooltipLink
+                  text="Source"
+                  url={sourceUrl}
+                  tooltipText={sourceUrl ? '' : 'Contact me!'}
+                  isDisabled={!sourceUrl}
+               />
             </div>
          </div>
       </div>
