@@ -32,8 +32,8 @@ function AboutMe() {
                   Figure out the hard stuff well before a single line of code has been written.
                </CustomLi>
                <CustomLi>
-                  You dont have to understand how NAND gates work but the lower down the tech stack
-                  you understand the better.
+                  You dont have to know how NAND gates work but understanding the basics of how
+                  things work a couple layers closer to the metal is worth a lot.
                </CustomLi>
                <CustomLi>
                   Software is a team sport. Focus should be on rising the tide for everyone, not

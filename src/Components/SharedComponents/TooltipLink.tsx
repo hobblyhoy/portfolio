@@ -40,8 +40,8 @@ function TooltipLink({ text, url, tooltipText, isDisabled = false }: IProps) {
    `;
 
    const tooltipCss = css`
-      cursor: default;
       font-size: 16px;
+      ${disabledCss}
    `;
 
    return (

@@ -5,7 +5,12 @@ import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomLi from './Components/SharedComponents/CustomLi';
 import CustomUl from './Components/SharedComponents/CustomUl';
+// Images
 import LmoImage from './Assets/lmo2.png';
+import PingTrackImage from './Assets/PingTrack.png';
+import QuiltiImage from './Assets/Quilti.png';
+import CommForwardImage from './Assets/CommForward.png';
+import PortfolioImage from './Assets/Portfolio.png'
 
 // css
 export const backgroundColor = '#1B1B3A';
@@ -14,7 +19,7 @@ export const backgroundColorSubtle = '#171732'; // -27 brightness
 
 export const primaryColor = '#BDBDE0';
 export const primaryColorHover = '#E9E9F4'; //+66 brightness
-export const primaryColorDisabled = '#727287' // desaturated + darker
+export const primaryColorDisabled = '#727287'; // desaturated + darker
 
 export const accentColor = '#DB3E00';
 export const accentColorHover = '#D6B0D6';
@@ -163,9 +168,36 @@ export interface IProjectContainer {
 
 export const projectList: IProjectContainer[] = [
    {
+      imageUrl: QuiltiImage,
+      websiteUrl: 'http://quilti.net/',
+      sourceUrl: 'https://github.com/hobblyhoy/Quilti',
+      title: 'Quilti',
+      copy: 'A user driven image collection site where anyone can contribute to an infinite quilt of artworks. This was built using React and utilizes the Canvas and Fabric.js libraries. This project utilizes heavy cacheing at all layers and constant trade-off analysis in order for it to work with my limited resources.',
+   },
+   {
+      imageUrl: PingTrackImage,
+      sourceUrl: 'https://github.com/hobblyhoy/PingTrack',
+      title: 'PingTrack',
+      copy: 'A standalone desktop application built using Electron and React. It allows constant ping responses charted to an unlimited number of hosts. This project gave me familiarity with Electron and TypeScript as well as a deeper understanding of Material.',
+   },
+   {
       imageUrl: LmoImage,
       websiteUrl: 'https://letsmeeton.com/',
       title: "Let's Meet On",
       copy: 'A web app to take a group of people’s schedules and display the times when everyone is available. Designed mobile responsive using Bootstrap with Vue.js for the frontend and ASP.NET with Entity Framework on the backend. Additionally, uses SignalR for chat, SendGrid for email API, and Moment.js.',
+   },
+   {
+      imageUrl: CommForwardImage,
+      websiteUrl: 'https://hobblyhoy.github.io/CommForward/index.html',
+      sourceUrl: 'https://github.com/hobblyhoy/CommForward',
+      title: 'Comm Forward',
+      copy: 'A minimalist app to communicate simple needs and feelings. Created for my grandfather who had fallen ill and had difficulty speaking. Features a simple to use and tablet friendly design and a customizable interface.',
+   },
+   {
+      imageUrl: PortfolioImage,
+      websiteUrl: window.location.href, // LOL
+      sourceUrl: 'https://TODO.com',
+      title: 'Portfolio',
+      copy: 'You know this one! Built with React and Typescript with a little Lodash and Font Awesome sprinkled in. Animations, typography, design, etc are all home grown. Curious how I did the thing with my face? Check out the source!',
    },
 ];
