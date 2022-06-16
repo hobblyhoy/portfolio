@@ -28,8 +28,12 @@ function ExperienceTimeline({ selectedWorkDetails, clickHandler }: IProps) {
    `;
 
    const yearTextCss = css`
-      border-left: 6px solid ${backgroundColor};
+      border-left: 4px solid ${backgroundColor};
       border-top: 4px solid ${backgroundColor};
+      font-size: 14px;
+      display: flex;
+      align-items: end;
+      padding-left: 2px;
    `;
 
    const gridWorkDetailsCss = (workDetails: IWorkDetails) => {
@@ -48,7 +52,7 @@ function ExperienceTimeline({ selectedWorkDetails, clickHandler }: IProps) {
          margin-left: 2px;
          margin-right: 2px;
          text-align: center;
-         color: ${workDetails === selectedWorkDetails ? accentColor : backgroundColorBlock};
+         color: ${workDetails === selectedWorkDetails ? accentColor : 'unset'};
          cursor: pointer;
          width: ${(() => {
             if (workDetails.endYear != null) return 'unset';

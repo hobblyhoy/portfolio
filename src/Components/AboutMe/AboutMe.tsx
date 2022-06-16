@@ -32,10 +32,6 @@ function AboutMe() {
                   Figure out the hard stuff well before a single line of code has been written.
                </CustomLi>
                <CustomLi>
-                  You dont have to know how NAND gates work but understanding the basics of how
-                  things work a couple layers closer to the metal is worth a lot.
-               </CustomLi>
-               <CustomLi>
                   Software is a team sport. Focus should be on rising the tide for everyone, not
                   pinpointing and leaning into your star players.
                </CustomLi>
@@ -47,7 +43,11 @@ function AboutMe() {
                   right- it enables freedom, not control.
                </CustomLi>
                <CustomLi>Test it. Then automate the test. Then test the tests.</CustomLi>
-               <CustomLi>YAGNI</CustomLi>
+               <CustomLi>
+                  You dont have to know how NAND gates work but understanding the basics of how
+                  things operate a couple layers closer to the metal is valuable.
+               </CustomLi>
+               <CustomLi>YAGNI / KISS</CustomLi>
                <CustomLi>
                   Estimates are almost always wrong. Projections based on past performance are
                   infinitely better.

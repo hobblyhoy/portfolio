@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomLi from './Components/SharedComponents/CustomLi';
 import CustomUl from './Components/SharedComponents/CustomUl';
 // Images
-import LmoImage from './Assets/lmo2.png';
-import PingTrackImage from './Assets/PingTrack.png';
-import QuiltiImage from './Assets/Quilti.png';
-import CommForwardImage from './Assets/CommForward.png';
-import PortfolioImage from './Assets/Portfolio.png'
+import LmoImage from './Assets/lmo5.jpg';
+import PingTrackImage from './Assets/PingTrack.jpg';
+import QuiltiImage from './Assets/Quilti.jpg';
+import CommForwardImage from './Assets/CommForward.jpg';
+import PortfolioImage from './Assets/Portfolio.jpg'
 
 // css
 export const backgroundColor = '#1B1B3A';
@@ -172,7 +172,7 @@ export const projectList: IProjectContainer[] = [
       websiteUrl: 'http://quilti.net/',
       sourceUrl: 'https://github.com/hobblyhoy/Quilti',
       title: 'Quilti',
-      copy: 'A user driven image collection site where anyone can contribute to an infinite quilt of artworks. This was built using React and utilizes the Canvas and Fabric.js libraries. This project utilizes heavy cacheing at all layers and constant trade-off analysis in order for it to work with my limited resources.',
+      copy: 'A user driven image collection site where anyone can contribute to an infinite quilt of artworks. This was built using React and utilizes the Canvas and Fabric.js libraries. This project is heavily cached at all layers and a lot of trade-off analysis in order for it to work with my limited hosting resources.',
    },
    {
       imageUrl: PingTrackImage,
@@ -188,7 +188,7 @@ export const projectList: IProjectContainer[] = [
    },
    {
       imageUrl: CommForwardImage,
-      websiteUrl: 'https://hobblyhoy.github.io/CommForward/index.html',
+      websiteUrl: 'https://hobblyhoy.github.io/CommForward/',
       sourceUrl: 'https://github.com/hobblyhoy/CommForward',
       title: 'Comm Forward',
       copy: 'A minimalist app to communicate simple needs and feelings. Created for my grandfather who had fallen ill and had difficulty speaking. Features a simple to use and tablet friendly design and a customizable interface.',
@@ -196,7 +196,7 @@ export const projectList: IProjectContainer[] = [
    {
       imageUrl: PortfolioImage,
       websiteUrl: window.location.href, // LOL
-      sourceUrl: 'https://TODO.com',
+      sourceUrl: 'https://github.com/hobblyhoy/portfolio',
       title: 'Portfolio',
       copy: 'You know this one! Built with React and Typescript with a little Lodash and Font Awesome sprinkled in. Animations, typography, design, etc are all home grown. Curious how I did the thing with my face? Check out the source!',
    },

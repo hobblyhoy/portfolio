@@ -11,7 +11,10 @@ function ContactMeBox() {
    const [isHovered, setIsHovered] = useState(false);
 
    const contactMeBoxCss = css`
-      padding: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 40px;
       top: 0px;
       right: 0px;
       min-width: 150px;
@@ -25,14 +28,14 @@ function ContactMeBox() {
 
    const contactMeTextCss = css`
       ${sharedCss}
-      right: 20px;
+      right: 40px;
       top: ${isHovered ? '-30px' : '25px'};
       opacity: ${isHovered ? 0 : 1};
    `;
 
    const contactMeActionsCss = css`
       ${sharedCss}
-      right: 20px;
+      right: 40px;
       top: ${isHovered ? '20px' : '-30px'};
       opacity: ${isHovered ? 1 : 0};
    `;

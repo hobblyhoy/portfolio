@@ -91,10 +91,12 @@ function Tech() {
                         <th>Planning</th>
                         <th>Building</th>
                         <th>Testing</th>
+                        <th>Database</th>
                      </tr>
                      <tr>
                         <th>--------</th>
                         <th>--------</th>
+                        <th>-------</th>
                         <th>-------</th>
                      </tr>
                      <tr>
@@ -105,6 +107,7 @@ function Tech() {
                         <td>
                            BrowserStack, <span css={accentCss}>Selenium</span>, Jest
                         </td>
+                        <td>SQL Server, Cosmos</td>
                      </tr>
                   </tbody>
                </table>

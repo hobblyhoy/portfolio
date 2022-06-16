@@ -22,6 +22,10 @@ function ProjectContainer({ imageUrl, websiteUrl, sourceUrl, title, copy }: IPro
       border-top: solid ${accentColor};
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
+
+      @media (max-width: 768px) {
+         display: none;
+      }
    `;
 
    const contentCss = css`
@@ -29,14 +33,17 @@ function ProjectContainer({ imageUrl, websiteUrl, sourceUrl, title, copy }: IPro
       flex-direction: column;
       border-top: solid ${accentColor};
       background-color: ${backgroundColor};
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
       text-align: center;
       justify-content: space-between;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      @media (max-width: 768px) {
+         border-radius: 15px;
+      }
    `;
 
    const titleCss = css`
-      margin-top: 5px;
+      margin-top: 10px;
       color: ${accentColor};
    `;
 

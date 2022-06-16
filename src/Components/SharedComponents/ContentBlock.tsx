@@ -30,7 +30,6 @@ function ContentBlock({ title, children, id }: IProps) {
                (frameRef.current?.getBoundingClientRect().top || Number.POSITIVE_INFINITY);
 
             if (userScrollDepth >= topOfElement + scrollBuffer) {
-               console.log('reached the element!');
                setIsVisible(true);
                window.removeEventListener('scroll', onScroll);
             }
