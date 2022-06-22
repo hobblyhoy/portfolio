@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { unzip } from 'lodash';
 import { Fragment } from 'react';
 import { ICommandLineColumn } from '../../copy';
 
@@ -21,7 +21,7 @@ function CommandLineTable({ columns, showHeadings }: IProps) {
       });
    }
 
-   let contentRows = _.unzip(columns.map(x => x.values));
+   let contentRows = unzip(columns.map(x => x.values));
 
    return (
       <table>
