@@ -68,7 +68,7 @@ function ProjectContainer({ imageUrl, websiteUrl, sourceUrl, title, copy }: IPro
                <TooltipLink
                   text="Website"
                   url={websiteUrl}
-                  tooltipText={websiteUrl ? '' : 'No web hosted version available'}
+                  tooltipText={websiteUrl ? '' : 'No web version available'}
                   isDisabled={!websiteUrl}
                />
                <TooltipLink
