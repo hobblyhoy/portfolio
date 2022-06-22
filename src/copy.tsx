@@ -69,7 +69,7 @@ export const commandLineBackend: ICommandLineColumn = {
 };
 export const commandLinePlanning: ICommandLineColumn = {
    heading: 'Planning',
-   values: [<span>Azure DevOps, Jira, Notion</span>],
+   values: [<span>Azure DevOps, Jira, Figma</span>],
 };
 export const commandLineBuilding: ICommandLineColumn = {
    heading: 'Building',
