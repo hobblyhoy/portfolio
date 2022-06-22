@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "cra-bundle-analyzer": "^0.1.1",
     "gh-pages": "^4.0.0"
   }
 }

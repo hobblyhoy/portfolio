@@ -1,4 +1,4 @@
-import { random } from 'lodash';
+import random from 'lodash/random';
 
 /**
  * An easing function to take you from some starting position to 0.

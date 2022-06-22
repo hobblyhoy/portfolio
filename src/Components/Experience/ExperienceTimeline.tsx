@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import { accentColor, backgroundColor } from '../../store';
 import { IWorkDetails, workDetailsList } from '../../copy';
-import { range } from 'lodash';
+import range from 'lodash/range';
 import { differenceInDays } from 'date-fns';
 
 const currentDate = new Date();

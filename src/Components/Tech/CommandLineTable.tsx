@@ -1,4 +1,4 @@
-import { unzip } from 'lodash';
+import unzip from 'lodash/unzip';
 import { Fragment } from 'react';
 import { ICommandLineColumn } from '../../copy';
 

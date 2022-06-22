@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 import { backgroundColorBlock } from '../../store';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 import SlideBox from './SlideBox';
 
 interface IProps {
