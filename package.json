@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://hobblyhoy.github.io/portfolio",
+  "homepage": "http://www.gitcheckoutnathan.com/",
   "private": true,
   "dependencies": {
     "@emotion/core": "^11.0.0",
