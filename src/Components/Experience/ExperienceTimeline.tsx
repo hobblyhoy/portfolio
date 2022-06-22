@@ -1,13 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import {
-   accentColor,
-   backgroundColor,
-   backgroundColorBlock,
-   IWorkDetails,
-   workDetailsList,
-} from '../../store';
+import { accentColor, backgroundColor } from '../../store';
+import { IWorkDetails, workDetailsList } from '../../copy';
 import { range } from 'lodash';
 import { differenceInDays } from 'date-fns';
 

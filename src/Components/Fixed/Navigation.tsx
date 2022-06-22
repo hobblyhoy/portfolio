@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useMediaQuery from '../../CustomHooks/useMediaQuery';
-import { accentColor, accentLinkHover, boringColor, collapsedHeaderHeight } from '../../store';
+import { accentColor, accentLinkHoverCss, boringColor, collapsedHeaderHeight } from '../../store';
 
 interface IProps {
    mobileNavIsOpen: boolean;
@@ -71,25 +71,25 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
                [
             </div>
             <div>
-               <a onClick={() => scrollTo('about-me')} css={accentLinkHover}>
+               <a onClick={() => scrollTo('about-me')} css={accentLinkHoverCss}>
                   About Me
                </a>
                ,
             </div>
             <div>
-               <a onClick={() => scrollTo('tech')} css={accentLinkHover}>
+               <a onClick={() => scrollTo('tech')} css={accentLinkHoverCss}>
                   Tech
                </a>
                ,
             </div>
             <div>
-               <a onClick={() => scrollTo('experience')} css={accentLinkHover}>
+               <a onClick={() => scrollTo('experience')} css={accentLinkHoverCss}>
                   Experience
                </a>
                ,
             </div>
             <div>
-               <a onClick={() => scrollTo('projects')} css={accentLinkHover}>
+               <a onClick={() => scrollTo('projects')} css={accentLinkHoverCss}>
                   Projects
                </a>
             </div>
@@ -105,19 +105,19 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
    ) : (
       <div css={desktopNavCss}>
          [&nbsp;&nbsp;
-         <a onClick={() => scrollTo('about-me')} css={accentLinkHover}>
+         <a onClick={() => scrollTo('about-me')} css={accentLinkHoverCss}>
             About Me
          </a>
          ,&nbsp;&nbsp;
-         <a onClick={() => scrollTo('tech')} css={accentLinkHover}>
+         <a onClick={() => scrollTo('tech')} css={accentLinkHoverCss}>
             Tech
          </a>
          ,&nbsp;&nbsp;
-         <a onClick={() => scrollTo('experience')} css={accentLinkHover}>
+         <a onClick={() => scrollTo('experience')} css={accentLinkHoverCss}>
             Experience
          </a>
          ,&nbsp;&nbsp;
-         <a onClick={() => scrollTo('projects')} css={accentLinkHover}>
+         <a onClick={() => scrollTo('projects')} css={accentLinkHoverCss}>
             Projects
          </a>
          &nbsp;&nbsp;]

@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { primaryColorDisabled, primaryLinkHover } from '../../store';
+import { primaryColorDisabled, primaryLinkHoverCss } from '../../store';
 import SlideBox from './SlideBox';
 
 interface IProps {
@@ -46,7 +46,7 @@ function TooltipLink({ text, url, tooltipText, isDisabled = false }: IProps) {
 
    return (
       <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-         <span ref={textRef} css={isDisabled ? disabledCss : primaryLinkHover}>
+         <span ref={textRef} css={isDisabled ? disabledCss : primaryLinkHoverCss}>
             {isDisabled ? (
                text
             ) : (

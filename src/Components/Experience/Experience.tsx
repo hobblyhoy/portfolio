@@ -1,4 +1,4 @@
-import { IWorkDetails, workDetailsList } from '../../store';
+import { IWorkDetails, workDetailsList } from '../../copy';
 import ContentBlock from '../SharedComponents/ContentBlock';
 import { SetStateAction, useState } from 'react';
 import ExperienceTimeline from './ExperienceTimeline';

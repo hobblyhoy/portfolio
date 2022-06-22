@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
+import { aboutMeList } from '../../copy';
 import ContentBlock from '../SharedComponents/ContentBlock';
 import CustomLi from '../SharedComponents/CustomLi';
 import CustomUl from '../SharedComponents/CustomUl';
@@ -28,38 +29,7 @@ function AboutMe() {
                lessons I keep close to heart:
             </p>
             <CustomUl>
-               <CustomLi>
-                  Figure out the hard stuff well before a single line of code has been written.
-               </CustomLi>
-               <CustomLi>
-                  Software is a team sport. Focus should be on rising the tide for everyone, not
-                  pinpointing and leaning into your star players.
-               </CustomLi>
-               <CustomLi>
-                  Micro-optimizations are almost always a fools errand that miss the bigger picture.
-               </CustomLi>
-               <CustomLi>
-                  All process implementations should be about offloading cognitive load. When done
-                  right- it enables freedom, not control.
-               </CustomLi>
-               <CustomLi>Test it. Then automate the test. Then test the tests.</CustomLi>
-               <CustomLi>
-                  You dont have to know how NAND gates work but understanding the basics of how
-                  things operate a couple layers closer to the metal is valuable.
-               </CustomLi>
-               <CustomLi>YAGNI / KISS</CustomLi>
-               <CustomLi>
-                  Estimates are almost always wrong. Projections based on past performance are
-                  infinitely better.
-               </CustomLi>
-               <CustomLi>
-                  Code reviews can be a ridiculously useful tool for learning. Smiting those
-                  opportunities does a disservice to everyone.
-               </CustomLi>
-               <CustomLi>
-                  Everything learned (including everything in this list!) should be challenged for
-                  accuracy and relevance indefinitely.
-               </CustomLi>
+               {aboutMeList.map(li => <CustomLi>{li}</CustomLi>)}
             </CustomUl>
             <p css={end}>
                That only scratches the surface but I love chatting about this stuff so let's talk!

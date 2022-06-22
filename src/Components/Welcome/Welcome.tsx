@@ -14,7 +14,7 @@ function Welcome() {
       margin-right: 20px;
       @media (max-width: 768px) {
          flex-direction: column-reverse;
-         margin-top: 100px;
+         margin-bottom: 100px;
       }
    `;
 

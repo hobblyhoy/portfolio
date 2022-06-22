@@ -1,10 +1,24 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import { jsx, css, keyframes } from '@emotion/react';
+import { Fragment } from 'react';
+import {
+   commandLineBackend,
+   commandLineBuilding,
+   commandLineDatabase,
+   commandLineFrontend,
+   commandLinePlanning,
+   commandLineSections,
+   commandLineTesting,
+} from '../../copy';
+import useMediaQuery from '../../CustomHooks/useMediaQuery';
 import { accentColor, boringColorBright } from '../../store';
 import ContentBlock from '../SharedComponents/ContentBlock';
+import CommandLineTable from './CommandLineTable';
 
 function Tech() {
+   const isMobile = useMediaQuery('(max-width: 768px)');
+
    const commandLineCss = css`
       font-family: 'Consolas', monospace;
       font-size: 16px;
@@ -32,6 +46,13 @@ function Tech() {
       color: ${boringColorBright};
    `;
 
+   const keyframesHelper = keyframes`
+      0% { opacity: 0; }
+   `;
+   const blinky = css`
+      animation: ${keyframesHelper} 1.5s steps(2) infinite;
+   `;
+
    return (
       <ContentBlock title="Tech" id="tech">
          <div>
@@ -40,77 +61,50 @@ function Tech() {
                I know and <span css={accentCss}>particularly like</span>...
             </div>
             <div css={commandLineCss}>
-               <div css={enteredCommandCss}>{'>'} get-tech --Web</div>
-               <table>
-                  <tbody>
-                     <tr>
-                        <th></th>
-                        <th>Frontend</th>
-                        <th>Backend</th>
-                     </tr>
-                     <tr>
-                        <th></th>
-                        <th>--------</th>
-                        <th>-------</th>
-                     </tr>
-                     <tr>
-                        <td>Languages</td>
-                        <td>
-                           CSS, HTML, <span css={accentCss}>JavaScript</span>,{' '}
-                           <span css={accentCss}>TypeScript</span>
-                        </td>
-                        <td>C#, Python</td>
-                     </tr>
-                     <tr>
-                        <td>Frameworks</td>
-                        <td>
-                           AngularJS, <span css={accentCss}>Bootstrap</span>, Canvas, Electron,
-                           Knockout.js, <span css={accentCss}>React</span>, Vue.js
-                        </td>
-                        <td>
-                           Entity Framework, .NET, <span css={accentCss}>.NET Core</span>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>Libraries</td>
-                        <td>
-                           Context API, <span css={accentCss}>date-fns</span>,{' '}
-                           <span css={accentCss}>Emotion</span>, jQuery,{' '}
-                           <span css={accentCss}>Lodash</span>, Material, Moment.js, Redux, SCSS
-                        </td>
-                        <td>
-                           <span css={accentCss}>Dapper</span>, SignalR
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-               <div css={enteredCommandCss}>{'>'} get-tech --Other</div>
-               <table>
-                  <tbody>
-                     <tr>
-                        <th>Planning</th>
-                        <th>Building</th>
-                        <th>Testing</th>
-                        <th>Database</th>
-                     </tr>
-                     <tr>
-                        <th>--------</th>
-                        <th>--------</th>
-                        <th>-------</th>
-                        <th>-------</th>
-                     </tr>
-                     <tr>
-                        <td>Azure DevOps, Jira</td>
-                        <td>
-                           Webpack, <span css={accentCss}>Prettier</span>, ESLint
-                        </td>
-                        <td>
-                           BrowserStack, <span css={accentCss}>Selenium</span>, Jest
-                        </td>
-                        <td>SQL Server, Cosmos</td>
-                     </tr>
-                  </tbody>
-               </table>
+               {isMobile ? (
+                  <Fragment>
+                     <div css={enteredCommandCss}>{'>'} get-tech --Frontend</div>
+                     <CommandLineTable
+                        columns={[commandLineSections, commandLineFrontend]}
+                        showHeadings={false}
+                     />
+                     <div css={enteredCommandCss}>{'>'} get-tech --Backend</div>
+                     <CommandLineTable
+                        columns={[commandLineSections, commandLineBackend]}
+                        showHeadings={false}
+                     />
+                     <div css={enteredCommandCss}>{'>'} get-tech --Database</div>
+                     <CommandLineTable columns={[commandLineDatabase]} showHeadings={false} />
+                     <div css={enteredCommandCss}>{'>'} get-tech --Testing</div>
+                     <CommandLineTable columns={[commandLineTesting]} showHeadings={false} />
+                     <div css={enteredCommandCss}>{'>'} get-tech --Other</div>
+                     <CommandLineTable
+                        columns={[commandLinePlanning, commandLineBuilding]}
+                        showHeadings={true}
+                     />
+                  </Fragment>
+               ) : (
+                  <Fragment>
+                     <div css={enteredCommandCss}>{'>'} get-tech --Web</div>
+                     <CommandLineTable
+                        columns={[commandLineSections, commandLineFrontend, commandLineBackend]}
+                        showHeadings={true}
+                     />
+                     <div css={enteredCommandCss}>{'>'} get-tech --Other</div>
+                     <CommandLineTable
+                        columns={[
+                           commandLineDatabase,
+                           commandLineTesting,
+                           commandLinePlanning,
+                           commandLineBuilding,
+                        ]}
+                        showHeadings={true}
+                     />
+                  </Fragment>
+               )}
+               <div css={enteredCommandCss}>
+                  {'>'} <span css={blinky}>█</span>
+               </div>
             </div>
          </div>
       </ContentBlock>

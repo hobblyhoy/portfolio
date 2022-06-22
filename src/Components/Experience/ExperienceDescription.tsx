@@ -3,12 +3,13 @@
 import { jsx, css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
-import { accentColor, IWorkDetails } from '../../store';
+import { accentColor } from '../../store';
+import { IWorkDetails } from '../../copy';
 
 interface IProps {
-   selectedWorkDetails: IWorkDetails,
+   selectedWorkDetails: IWorkDetails;
 }
-function ExperienceDescription({selectedWorkDetails}: IProps) {
+function ExperienceDescription({ selectedWorkDetails }: IProps) {
    const base = css`
       min-height: 120px;
    `;
@@ -22,7 +23,7 @@ function ExperienceDescription({selectedWorkDetails}: IProps) {
    const titleCss = css`
       color: ${accentColor};
       padding-right: 15px;
-   `
+   `;
 
    return (
       <div css={base}>

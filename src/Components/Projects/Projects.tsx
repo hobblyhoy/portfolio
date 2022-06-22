@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { IProjectContainer, projectList } from '../../store';
+import { IProjectContainer, projectList } from '../../copy';
 import ContentBlock from '../SharedComponents/ContentBlock';
 import ProjectContainer from './ProjectContainer';
 
