@@ -13,6 +13,10 @@ interface IProps {
 function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
    const isMobile = useMediaQuery('(max-width: 768px)');
 
+   const base = css`
+      width: 50%;
+   `;
+
    const desktopNavCss = css`
       margin-left: 20px;
       color: ${boringColor};
@@ -22,9 +26,8 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
 
    const mobileBurgerMenuCss = css`
       margin-top: 15px;
-      margin-left: 10px;
+      margin-left: 15px;
       padding: 10px;
-      color: ${accentColor};
       cursor: pointer;
       font-size: 25px;
    `;
@@ -55,7 +58,7 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
    };
 
    return isMobile ? (
-      <div>
+      <div css={base}>
          <div
             css={mobileBurgerMenuCss}
             onClick={() => setMobileNavIsOpen((current: boolean) => !current)}
@@ -72,7 +75,7 @@ function Navigation({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
             </div>
             <div>
                <a onClick={() => scrollTo('about-me')} css={accentLinkHoverCss}>
-                  About Me
+                  About&nbsp;Me
                </a>
                ,
             </div>

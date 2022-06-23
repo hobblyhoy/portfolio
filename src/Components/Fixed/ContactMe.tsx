@@ -17,7 +17,7 @@ function ContactMeBox() {
       padding-right: 40px;
       top: 0px;
       right: 0px;
-      min-width: 150px;
+      width: 50%;
    `;
 
    const sharedCss = css`
