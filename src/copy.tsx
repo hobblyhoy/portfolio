@@ -216,7 +216,7 @@ export const projectList: IProjectContainer[] = [
       websiteUrl: 'http://quilti.net/',
       sourceUrl: 'https://github.com/hobblyhoy/Quilti',
       title: 'Quilti',
-      copy: 'A user driven image collection site where anyone can contribute to an infinite quilt of artworks. This was built using React and utilizes the Canvas and Fabric.js libraries. This project is heavily cached at all layers and a lot of trade-off analysis in order for it to work with my limited hosting resources.',
+      copy: 'A user driven image collection site where anyone can contribute to an infinite quilt of artworks. This was built using React and utilizes the Canvas and Fabric.js libraries. This project is heavily cached at all layers and required many rounds of trade-off analysis in order for it to work well under my limited hosting resources.',
    },
    {
       imageUrl: PingTrackImage,
