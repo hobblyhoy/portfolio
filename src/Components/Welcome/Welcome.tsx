@@ -40,6 +40,7 @@ function Welcome() {
          width: 250px;
          height: 250px;
          margin-left: 0;
+         margin-right: 0;
       }
    `;
 
