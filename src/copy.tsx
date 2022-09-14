@@ -19,13 +19,13 @@ import { accentColorCss } from './store';
 export const aboutMeList = [
    'Figure out the hard stuff well before a single line of code has been written.',
    'Software is a team sport. Focus should be on rising the tide for everyone, not pinpointing and leaning into your star players.',
-   'Micro-optimizations are almost always a fools errand that miss the bigger picture.',
+   'Micro-optimizations are frequently a fools errand that miss the bigger picture.',
    'All process implementations should be about offloading cognitive load. When done right- it enables freedom, not control.',
    'Test it. Then automate the test. Then test the tests.',
    'You dont have to know how NAND gates work but understanding the basics of how things operate a couple layers closer to the metal is valuable.',
    'YAGNI / KISS',
-   'Estimates are almost always wrong. Projections based on past performance are infinitely better.',
-   'Code reviews can be a ridiculously useful tool for learning. Smiting those opportunities does a disservice to everyone.',
+   'Time Estimates are almost always wrong. Extrapolating based on past performance is far more accurate.',
+   'Code reviews can be a fantastically useful tool for learning for both the code reviewer and reviewee.',
    'Everything learned (including everything in this list!) should be challenged for accuracy and relevance indefinitely.',
 ];
 
@@ -127,7 +127,7 @@ export const workDetailsList: IWorkDetails[] = [
    {
       companyLabel: 'MREN',
       companyFullName: 'MREN',
-      title: 'Software Developer',
+      title: 'Full Stack Software Developer',
       startYear: 2016,
       endYear: 2018,
       description: (
@@ -167,7 +167,7 @@ export const workDetailsList: IWorkDetails[] = [
                Learned and built projects with modern frontend frameworks Angular, React, and Vue.
             </CustomLi>
             <CustomLi>Learned Canvas and FabricJS.</CustomLi>
-            <CustomLi>Various freelance / side jobs earning literally 10's of dollars.</CustomLi>
+            <CustomLi>Various freelance / side jobs.</CustomLi>
             <CustomLi>Assisted in duck handling at a remote duck sanctuary (no, really).</CustomLi>
          </CustomUl>
       ),
@@ -175,7 +175,7 @@ export const workDetailsList: IWorkDetails[] = [
    {
       companyLabel: 'iGrad',
       companyFullName: 'iGrad Financial Wellness',
-      title: 'Software Engineer',
+      title: 'Full Stack Software Engineer',
       startYear: 2019,
       endYear: null,
       description: (
@@ -197,6 +197,9 @@ export const workDetailsList: IWorkDetails[] = [
                Researched and implemented a Database Projects instance and integrated automatic
                database deployments into Azure DevOps pipeline.
             </CustomLi>
+            <CustomLi>
+               Technical liaison between department heads and Technology research/proposal duties.
+            </CustomLi>
          </CustomUl>
       ),
    },
@@ -212,6 +215,13 @@ export interface IProjectContainer {
 }
 export const projectList: IProjectContainer[] = [
    {
+      imageUrl: PortfolioImage,
+      websiteUrl: window.location.href, // LOL
+      sourceUrl: 'https://github.com/hobblyhoy/portfolio',
+      title: 'Portfolio',
+      copy: 'You know this one! Built with React and Typescript with a little Lodash and Font Awesome sprinkled in. Animations, typography, design, etc are all home grown. Curious how I did the thing with my face? Check out the source!',
+   },
+   {
       imageUrl: QuiltiImage,
       websiteUrl: 'http://quilti.net/',
       sourceUrl: 'https://github.com/hobblyhoy/Quilti',
@@ -222,7 +232,7 @@ export const projectList: IProjectContainer[] = [
       imageUrl: PingTrackImage,
       sourceUrl: 'https://github.com/hobblyhoy/PingTrack',
       title: 'PingTrack',
-      copy: 'A standalone desktop application built using Electron and React. It allows constant ping responses charted to an unlimited number of hosts. This project gave me familiarity with Electron and TypeScript as well as a deeper understanding of Material.',
+      copy: 'A standalone desktop application built using Electron and React. It allows constant ping responses charted to an unlimited number of hosts. This project gave me familiarity with Electron and TypeScript as well as a deeper understanding of OS integration.',
    },
    {
       imageUrl: LmoImage,
@@ -236,12 +246,5 @@ export const projectList: IProjectContainer[] = [
       sourceUrl: 'https://github.com/hobblyhoy/CommForward',
       title: 'Comm Forward',
       copy: 'A minimalist app to communicate needs and feelings. Created for my grandfather who had fallen ill and had difficulty speaking. Features a simple to use, tablet-friendly design and a customizable interface.',
-   },
-   {
-      imageUrl: PortfolioImage,
-      websiteUrl: window.location.href, // LOL
-      sourceUrl: 'https://github.com/hobblyhoy/portfolio',
-      title: 'Portfolio',
-      copy: 'You know this one! Built with React and Typescript with a little Lodash and Font Awesome sprinkled in. Animations, typography, design, etc are all home grown. Curious how I did the thing with my face? Check out the source!',
-   },
+   }
 ];

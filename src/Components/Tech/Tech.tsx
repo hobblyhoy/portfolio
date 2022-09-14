@@ -57,8 +57,7 @@ function Tech() {
       <ContentBlock title="Tech" id="tech">
          <div>
             <div>
-               The most fun work is thinking through and building UI/UX. But heres some other tech I
-               know and <span css={accentCss}>particularly like</span>...
+               Heres some of the tech I know and <span css={accentCss}>particularly like</span>...
             </div>
             <div css={commandLineCss}>
                {isMobile ? (

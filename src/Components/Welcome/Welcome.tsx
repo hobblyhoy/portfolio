@@ -26,9 +26,11 @@ function Welcome() {
       }
    `;
 
-   //TODO play with this might be able to get some mroe range by limighting the height
    const faceBlockCss = css`
+      // we've created an svg frame thats 400px oversized to allow more room for animation
+      // so we pull back in the margin to make everything line back up again.
       margin-left: -200px;
+      margin-right: -200px;
       width: 800px;
       height: 800px;
       display: flex;
