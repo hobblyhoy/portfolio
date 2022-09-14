@@ -50,7 +50,7 @@ function ContactMeBox() {
             Contact
          </div>
          <div css={contactMeActionsCss}>
-            <a target="_blank" href="mailto:nrooke42@igrad.com" aria-label="Contact by email">
+            <a target="_blank" href="mailto:nrooke42@gmail.com" aria-label="Contact by email">
                <FontAwesomeIcon
                   icon={faEnvelope}
                   css={css`
