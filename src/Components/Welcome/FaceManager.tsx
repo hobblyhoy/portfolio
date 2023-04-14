@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import Transformer from '../../Classes/Transformer';
 import useCursorPosition, { Position } from '../../CustomHooks/useCursorPosition';
 import { easeToZero } from '../../utils';
-import Face from './Face';
+import Face from './FaceV2';
 
 // Configurable constants
-const thresholdSize = 200; // size of the square at the center of the screen for threshold detection
+const thresholdSize = 300; // size of the square at the center of the screen for threshold detection
 const totalAnimationTime = 1000; //in milliseconds
 
 // The theory- we have an SVG of my face, split up and randomly manipulated by SVG transforms keyed off
@@ -104,7 +104,7 @@ function FaceManager() {
    // generating two transforms for each SVG element (keyed off cursor X + Y).
    useEffect(() => {
       const newTransformProps = [...transformProps];
-      for (var i = 0; i <= 106; i++) {
+      for (var i = 0; i <= 59; i++) {
          if (newTransformProps[i] === undefined) {
             newTransformProps[i] = new Transformer();
          }

@@ -19,6 +19,9 @@ function Welcome() {
    `;
 
    const welcomeBlockCss = css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-right: 20px;
       @media (max-width: 768px) {
          margin-left: 20px;
@@ -45,20 +48,23 @@ function Welcome() {
    `;
 
    const welcomeTextCss = css`
-      font-size: 100px;
+      font-size: 150px;
       @media (max-width: 768px) {
          font-size: 80px;
       }
    `;
 
    const myNameIsTextCss = css`
-      font-size: 36px;
-      margin-bottom: 15px;
-      // display: flex;
-      // align-items: center;
+      font-size: 54px;
+      margin-bottom: 30px;
       @media (max-width: 768px) {
          font-size: 28px;
+         margin-bottom: 15px;
       }
+   `;
+
+   const iAmATextCss = css`
+      font-size: 23px;
    `;
 
    const accentColorCss = css`
@@ -73,9 +79,9 @@ function Welcome() {
             <div css={myNameIsTextCss}>
                My name is <span css={accentColorCss}>Nathan Rooke</span>
             </div>
-            <div>
+            <div css={iAmATextCss}>
                I'm a <span css={accentColorCss}>web software engineer</span> and I love building
-               stuff.
+               stuff
             </div>
          </div>
          <div css={faceBlockCss}>

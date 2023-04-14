@@ -1,3 +1,4 @@
+import React from 'react';
 import Transformer from '../../Classes/Transformer';
 import useMediaQuery from '../../CustomHooks/useMediaQuery';
 
